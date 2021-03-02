@@ -26,28 +26,28 @@ The image of this repository is available on [Dockerhub](https://hub.docker.com/
  and [Docker Compose](https://docs.docker.com/compose/install/) version **1.28.0+**.
 3.  Get access to your GPU via CUDA drivers within Docker containers.
     You can be sure that you can access your GPU within Docker, 
-    if the command `docker run --gpus all nvidia/cuda:10.2-cudnn8-runtime-ubuntu18.04 nvidia-smi`
+    if the command `docker run --gpus all nvidia/cuda:11.2.1-cudnn8-runtime-ubuntu18.04 nvidia-smi`
     returns a result similar to this one:
     ```bash
     Fri Feb 26 12:45:19 2021       
-    +-----------------------------------------------------------------------------+
-    | NVIDIA-SMI 460.39       Driver Version: 460.39       CUDA Version: 10.2     |
-    |-------------------------------+----------------------+----------------------+
-    | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-    |                               |                      |               MIG M. |
-    |===============================+======================+======================|
-    |   0  GeForce RTX 207...  Off  | 00000000:01:00.0  On |                  N/A |
-    |  0%   43C    P8     3W / 215W |   1976MiB /  7974MiB |      3%      Default |
-    |                               |                      |                  N/A |
-    +-------------------------------+----------------------+----------------------+
-                                                                                   
-    +-----------------------------------------------------------------------------+
-    | Processes:                                                                  |
-    |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
-    |        ID   ID                                                   Usage      |
-    |=============================================================================|
-    +-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.32.03    Driver Version: 460.32.03    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 3090    On   | 00000000:42:00.0  On |                  N/A |
+|  0%   48C    P8    33W / 420W |    683MiB / 24265MiB |     11%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
     ``` 
     If you don't get an output similar than this one, follow the installation steps in this 
 [medium article](https://medium.com/@christoph.schranz/set-up-your-own-gpu-based-jupyterlab-e0d45fcacf43).
